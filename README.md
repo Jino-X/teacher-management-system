@@ -240,3 +240,15 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ---
 
 Developed with ❤️ for educational institutions
+
+## 🎬 Video Demonstration
+
+Watch a comprehensive walkthrough of the Teacher Management System in action:
+
+[▶️ Watch Video: Teacher Management System Demo (Google Drive)](https://drive.google.com/file/d/12TjQiieEgi2FXJ7MSfg1uMsFGgJ2Hlhw/view?usp=sharing)
+
+*This 5-10 minute demonstration covers:*
+- Code architecture and organization
+- Key features and functionality
+- Design decisions and implementation approach
+- Live demonstration of the dashboard and performance analytics
