@@ -1,26 +1,114 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "react-responsive-modal/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Light mode variables */
+  --background: #F7F9FC;
+  --foreground: #1A202C;
+  --primary: #2C6EBD;
+  --primary-light: #4F92D0;
+  --primary-dark: #1C5494;
+  --secondary: #FF8C0A;
+  --secondary-light: #FFA63F;
+  --secondary-dark: #E67300;
+  --success: #3AAB63;
+  --success-light: #6ACB8C;
+  --error: #E53E3E;
+  --error-light: #F56565;
+  --gray-100: #F7F9FC;
+  --gray-200: #EDF2F7;
+  --gray-300: #E2E8F0;
+  --gray-400: #CBD5E0;
+  --gray-500: #A0AEC0;
+  --gray-600: #718096;
+  --gray-700: #4A5568;
+  --gray-800: #2D3748;
+  --gray-900: #1A202C;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode variables */
+    --background: #1A202C;
+    --foreground: #F7F9FC;
+    --gray-100: #2D3748;
+    --gray-200: #4A5568;
+    --gray-300: #718096;
+    --gray-400: #A0AEC0;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* Custom classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white font-medium py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .btn-ghost {
+    @apply text-primary hover:bg-primary/10 font-medium py-2 px-4 rounded transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-neutral-100 dark:bg-neutral-800 rounded-lg shadow-md border border-neutral-200 dark:border-neutral-700 overflow-hidden;
+  }
+
+  .input-field {
+    @apply bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-primary placeholder:text-neutral-500;
+  }
+
+  .success-badge {
+    @apply bg-accent-green-light/20 text-accent-green-dark text-xs px-2 py-1 rounded-full;
+  }
+
+  .error-badge {
+    @apply bg-accent-red-light/20 text-accent-red-dark text-xs px-2 py-1 rounded-full;
+  }
+
+  .table-row-alternate {
+    @apply even:bg-neutral-200/50 dark:even:bg-neutral-800/50;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--gray-200);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--primary-light), var(--primary));
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--gray-200);
 }
